@@ -1,0 +1,307 @@
+/* Google Sans Flex 替代字体 - 使用类似的现代无衬线字体 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* 代码高亮样式 */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义字体类 */
+.font-google-sans-flex {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* 渐变背景动画 */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* 消息动画 */
+@keyframes message-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 打字机光标动画 */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor {
+  animation: blink 1s infinite;
+}
+
+.message-animate {
+  animation: message-slide-up 0.3s ease-out;
+}
+
+/* 按钮悬停效果 */
+.btn-hover-effect {
+  @apply transition-all duration-200 ease-in-out transform hover:scale-105 hover:shadow-lg;
+}
+
+/* 加载动画 */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 1.5s linear infinite;
+}
+
+/* 卡片悬停效果 */
+.card-hover-effect {
+  @apply transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1;
+}
+
+/* 文本渐变 */
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
+
+/* 玻璃拟态效果 */
+.glass-effect {
+  @apply backdrop-blur-md bg-white/30 border border-white/20 shadow-lg;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .mobile-optimized {
+    @apply px-4 py-3;
+  }
+  
+  .mobile-text {
+    @apply text-sm;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+/* 加载动画 */
+@keyframes pulse-dot {
+  0%, 80%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.pulse-dot-1 {
+  animation: pulse-dot 1.4s infinite ease-in-out both;
+}
+
+.pulse-dot-2 {
+  animation: pulse-dot 1.4s infinite ease-in-out both 0.2s;
+}
+
+.pulse-dot-3 {
+  animation: pulse-dot 1.4s infinite ease-in-out both 0.4s;
+}
+
+/* Gemini风格动画 */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gemini-fade-in {
+  animation: fade-in-up 0.6s ease-out;
+}
+
+/* Markdown 内容样式优化 */
+.markdown-content {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  @apply font-semibold text-gray-900 mt-4 mb-2;
+}
+
+.markdown-content h1 { @apply text-2xl; }
+.markdown-content h2 { @apply text-xl; }
+.markdown-content h3 { @apply text-lg; }
+.markdown-content h4 { @apply text-base; }
+.markdown-content h5 { @apply text-sm; }
+.markdown-content h6 { @apply text-xs; }
+
+.markdown-content p {
+  @apply mb-4;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  @apply mb-4 ml-4;
+}
+
+.markdown-content li {
+  @apply mb-1;
+}
+
+.markdown-content blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-4;
+}
+
+.markdown-content code {
+  @apply bg-gray-100 text-gray-800 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.markdown-content pre {
+  @apply bg-blue-50 text-gray-800 p-4 rounded-lg overflow-x-auto my-4;
+}
+
+.markdown-content pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.markdown-content table {
+  @apply border-collapse border border-gray-300 my-4;
+}
+
+.markdown-content th,
+.markdown-content td {
+  @apply border border-gray-300 px-4 py-2;
+}
+
+.markdown-content th {
+  @apply bg-gray-50 font-semibold;
+}
+
+.markdown-content a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* 按钮悬停发光效果 */
+.gemini-button-glow:hover {
+  box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+}
+
+/* 渐变边框动画 */
+@keyframes border-gradient {
+  0% {
+    border-image: linear-gradient(45deg, #8b5cf6, #ec4899, #8b5cf6) 1;
+  }
+  50% {
+    border-image: linear-gradient(45deg, #ec4899, #8b5cf6, #ec4899) 1;
+  }
+  100% {
+    border-image: linear-gradient(45deg, #8b5cf6, #ec4899, #8b5cf6) 1;
+  }
+}
+
+.gemini-gradient-border {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #8b5cf6, #ec4899) 1;
+  animation: border-gradient 3s ease infinite;
+}
+.conversation-container {
+  @apply p-0 my-2;
+}
+
+.message-actions-hover-boundary {
+  @apply w-full;
+}
+
+.user-query-container {
+  @apply w-full;
+}
+
+.right-align-content {
+  @apply flex justify-end;
+}
+
+.user-query-bubble-container {
+  @apply bg-blue-600 text-white px-4 sm:px-5 py-2 sm:py-3 rounded-2xl break-words ml-auto inline-block max-w-full;
+}
+
+.query-content {
+  @apply whitespace-pre-wrap text-sm sm:text-base leading-relaxed;
+}
+
+.verticle-align-for-single-line-text {
+  @apply align-middle;
+}
+
+.file-preview-container {}
+
+.assistant-message-bubble {
+  @apply bg-white rounded-2xl shadow-sm p-0 break-words w-full;
+}
+.chat-width {
+  @apply w-full mx-auto max-w-[clamp(60ch,54vw,96ch)];
+}
